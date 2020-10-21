@@ -1,7 +1,7 @@
 //Pari o dispari: scrivere una (o più di una) funzione per simulare il gioco di pari e dispari tra l'utente e il computer. L'utente sceglie un numero tra 1 e 5 e sceglie "pari" o "dispari". Il computer genera un secondo numero casuale tra 1 e 5. Per vedere chi dei due vince, si deve fare la somma dei numeri dell'utente e del computer e stabilire se il risultato è pari o dispari. Ad esempio, l'utente inserisce il numero 1 e indica come scelta "pari"; il computer genera casualmente il numero 3. In questo caso ha vinto l'utente (perché 1+3 = 4, che è pari)
 
-//INIZIO PARTITA
-console.log('INIZIO PARTITA');
+//DATI PARTITA
+console.log('DATI PARTITA');
 //variabili utente
 var num1, word1;
 
@@ -40,7 +40,6 @@ console.log('sum: ' + sum);
 
 //CONFRONTO E RISULTATO
 console.log('CONFRONTO E RISULTATO');
-
 //stampa a video il vincitore
 challenge(sum, word1);
 
@@ -59,16 +58,16 @@ function isEven(num){
     }
 }
 
-//funzione challenge(confronta la somma, la scelta dell'utente e stampa il risultato)
-function challenge(sum, UserWord){
+//funzione challenge(confronta la somma con la scelta dell'utente e stampa il risultato)
+function challenge(sum, user_choice){
     //se vince user...
-    if((isEven(sum) && (UserWord == 'pari')) || (!(isEven(sum)) && (UserWord == 'dispari'))){
-        console.log('isEven:' + isEven(sum) + ' ' + 'User:'+ UserWord);
+    if((isEven(sum) && (user_choice == 'pari')) || (!(isEven(sum)) && (user_choice == 'dispari'))){
+        console.log('isEven:' + isEven(sum) + ' ' + 'User:'+ user_choice);
         console.log('Vince user!');
     }
     //se vince avversario...
-    else if ((isEven(sum) && (UserWord == 'dispari')) || (!(isEven(sum)) && (UserWord == 'pari'))) {
-        console.log('isEven:' + isEven(sum) + ' ' + 'User:'+ UserWord);
+    else if ((isEven(sum) && (user_choice == 'dispari')) || (!(isEven(sum)) && (user_choice == 'pari'))) {
+        console.log('isEven:' + isEven(sum) + ' ' + 'User:'+ user_choice);
         console.log('Vince avversario!');
     }
     //errore

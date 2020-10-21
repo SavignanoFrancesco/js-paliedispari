@@ -54,36 +54,14 @@ if (exercise_choice == 1) {
 
     //DATI PARTITA
     console.log('DATI PARTITA');
-    //variabili utente
-    var num1, word1;
-
     //chiedo all'utente un numero da 1 a 5
-    do {
-        num1 = parseInt(prompt('Inserire un numero da 1 a 5: '));
-        console.log('user number: ' + num1);
-
-        if (num1 < 1 || num1 > 5 || isNaN(num1)) {
-            alert('Inserimento sbagliato...');
-        }
-
-    } while (num1 < 1 || num1 > 5 || isNaN(num1));
+    var num1 = askNumber();
 
     //richiesta pari o dispari all'utente
-    do {
-        word1 = prompt('Inserire pari o dispari: ');
-        console.log('user word: ' + word1);
-
-        if (word1 != 'pari' && word1 != 'dispari') {
-            alert('Inserimento sbagliato...');
-        }
-
-    } while (word1 != 'pari' && word1 != 'dispari');
-
-    //variabili avversario
-    var num2;
+    var word1 = askEvenOrOdd();
 
     //generazione numero random tra 1 e 5
-    num2 = getRndInteger(1, 5);
+    var num2 = getRndInteger(1, 5);
     console.log('random number generated: ' + num2);
 
     //somma numero utente e numero avversario
@@ -96,6 +74,34 @@ if (exercise_choice == 1) {
     challenge(sum, word1);
 
     //FUNZIONI
+    //funzione askNumber
+    function askNumber(){
+        do {
+            num1 = parseInt(prompt('Inserire un numero da 1 a 5: '));
+            console.log('user number: ' + num1);
+
+            if (num1 < 1 || num1 > 5 || isNaN(num1)) {
+                alert('Inserimento sbagliato...');
+            }
+
+        } while (num1 < 1 || num1 > 5 || isNaN(num1));
+        return num1;
+    }
+
+    //funzione askEvenOrOdd
+    function askEvenOrOdd(){
+        do {
+            even_or_odd = prompt('Inserire pari o dispari: ');
+            console.log('user word: ' + even_or_odd);
+
+            if (even_or_odd != 'pari' && even_or_odd != 'dispari') {
+                alert('Inserimento sbagliato...');
+            }
+
+        } while (even_or_odd != 'pari' && even_or_odd != 'dispari');
+        return even_or_odd;
+    }
+
     //funzione random
     function getRndInteger(min, max) {
       return Math.floor(Math.random() * (max - min + 1) ) + min;

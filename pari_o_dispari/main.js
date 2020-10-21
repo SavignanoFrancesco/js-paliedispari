@@ -50,7 +50,7 @@ function getRndInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1) ) + min;
 }
 
-//funzione isEven
+//funzione isEven(controlla se è pari un numero)
 function isEven(num){
     if (!(num % 2)) {
         return true;
@@ -59,7 +59,7 @@ function isEven(num){
     }
 }
 
-//funzione challenge
+//funzione challenge(confronta la somma, la scelta dell'utente e stampa il risultato)
 function challenge(sum, UserWord){
     //se vince user...
     if((isEven(sum) && (UserWord == 'pari')) || (!(isEven(sum)) && (UserWord == 'dispari'))){

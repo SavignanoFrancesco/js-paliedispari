@@ -74,21 +74,21 @@ if (exercise_choice == 1) {
     challenge(sum, word1);
 
     //FUNZIONI
-    //funzione askNumber
+    //funzione askNumber(restituisce la scelta dell'utente)
     function askNumber(){
         do {
-            num1 = parseInt(prompt('Inserire un numero da 1 a 5: '));
-            console.log('user number: ' + num1);
+            number = parseInt(prompt('Inserire un numero da 1 a 5: '));
+            console.log('user number: ' + number);
 
-            if (num1 < 1 || num1 > 5 || isNaN(num1)) {
+            if (number < 1 || number > 5 || isNaN(number)) {
                 alert('Inserimento sbagliato...');
             }
 
-        } while (num1 < 1 || num1 > 5 || isNaN(num1));
-        return num1;
+        } while (number < 1 || number > 5 || isNaN(number));
+        return number;
     }
 
-    //funzione askEvenOrOdd
+    //funzione askEvenOrOdd(restituisce la scelta dell'utente)
     function askEvenOrOdd(){
         do {
             even_or_odd = prompt('Inserire pari o dispari: ');

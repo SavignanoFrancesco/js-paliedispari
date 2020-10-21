@@ -4,14 +4,14 @@
 var word = prompt('Inserisci una parola per verificare se è palindroma: ');
 
 //richiamo la funzione per verificare se la parola inserita è palindroma
-if (reverseString(word)){
+if (isPalindrome(word)){
     console.log(word + ' è palindroma!');
 }else{
     console.log(word + ' NON è palindroma!');
 }
 
 //funzione che controlla se una stringa è palindroma
-function reverseString(string) {
+function isPalindrome(string) {
 
     //trasformo tutte le lettere della stringa in minuscolo
     string = string.toLowerCase();
@@ -25,6 +25,7 @@ function reverseString(string) {
     // trasforma l'array in una stringa
     var joinedArray = reversedArray.join("");
 
+    //se la stringa iniziale è uguale a quella invertita, è VERO che è palindroma
     if (joinedArray == string){
         return true;
     }else{
